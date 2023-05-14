@@ -7,8 +7,9 @@ import org.mapstruct.Mapper;
 @Mapper // This is a marker annotation so it declare that this is a mapper interface
 public interface CustomerMapper {
 //The way it converts is using the Builder pattern
-    Customer CustomertoCustomerDTO(Customer customer);
+    Customer CustomertoCustomerDTO(CustomerDto customer);
     CustomerDto CustomerDTOtoCustomer(Customer customer); // remember DTO mean Data Transfer Object
+
 
     //Remember Mapping is converting DTO to entities and entities to DTO
 //Remember the difference , Entities are like the toys in your toy box, they are different things

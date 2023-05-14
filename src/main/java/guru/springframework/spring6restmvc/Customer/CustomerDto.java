@@ -13,7 +13,7 @@ public class CustomerDto {
     private String Customername;
     private UUID Customerid;
 
-    private String CustomerVersion;
+    private int CustomerVersion;
     private String CustomerDate;
 
     private String lastModfiedDate;

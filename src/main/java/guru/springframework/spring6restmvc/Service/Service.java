@@ -2,10 +2,7 @@ package guru.springframework.spring6restmvc.Service;
 
 import guru.springframework.spring6restmvc.Customer.CustomerDto;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 
 @org.springframework.stereotype.Service
@@ -14,8 +11,8 @@ public class Service implements ServiceIntefaceforGet{
 
     Map<UUID, CustomerDto> id = new HashMap<>();
 
-    public Collection<CustomerDto> returnCustomer() {
-       return this.id.values();
+    public List<CustomerDto> returnCustomer() {
+       return (List<CustomerDto>) this.id.values();
     }
 
     public CustomerDto returnCustomerOfId(UUID id) {
@@ -48,5 +45,9 @@ public class Service implements ServiceIntefaceforGet{
     @Override
     public void DeletebyId(UUID id) {
         this.id.remove(id);
+    }
+    @Override
+    public void DeleteAll() {
+        this.id.clear();
     }
 }

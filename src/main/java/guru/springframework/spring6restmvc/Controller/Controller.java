@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -49,13 +50,17 @@ public class Controller {
     }
 
     @RequestMapping(value = "/api/v1/customers",method = RequestMethod.GET)
-    public Collection<CustomerDto> returnCustomer() {
+    public List<CustomerDto> returnCustomer() {
         return this.serviceIntefaceforGet.returnCustomer();
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)// making it specfic to get method
     public CustomerDto returnCustomerOfId(@PathVariable UUID id) {
         return this.serviceIntefaceforGet.returnCustomerOfId(id);
+    }
+    @DeleteMapping("/api/v1/customers")
+    public void DeleteAll() {
+        this.serviceIntefaceforGet.DeleteAll();
     }
 
 }
